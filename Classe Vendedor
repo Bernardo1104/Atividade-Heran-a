@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class vendedor extends empregado{
+  double valorVendas;
+  double comissao;
+  Scanner entrada = new Scanner(System.in);
+  //Metódos contrutores;
+  public vendedor(){
+    System.out.println("Insira o valor das vendas: ");
+    valorVendas = entrada.nextDouble();
+    System.out.println("Insira o valor da comissão: ");
+    comissao = entrada.nextDouble();
+  }
+  public vendedor(String nome, String endereco, String telefone, int codigoSetor, double salarioBase, double imposto, double valorVendas, double comissao){
+    super(nome, endereco, telefone, codigoSetor, salarioBase, imposto);
+    this.valorVendas = valorVendas;
+    this.comissao = 0.1 / valorVendas;
+  }
+  //Metódos gets para cada atributo;
+  public double getValorVendas(){
+    return valorVendas;
+  }
+  public double getComissao(){
+    return comissao;
+  }
+  //Metódos sets para cada atributo;
+  public void setValorVendas(double valorVendas){
+    this.valorVendas = valorVendas;
+  }
+  public void setComissao(double comissao){
+    this.comissao = comissao;
+  }
+  //Metodo para calcular o salario;
+  public double calcularSalario(){
+    return salarioBase + (comissao * valorVendas);
+  }
+
+}
