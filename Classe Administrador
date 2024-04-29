@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class administrador extends empregado {
+  double ajudaDeCusto;
+  Scanner entrada = new Scanner(System.in);
+  // Metódos contrutores;
+  public administrador(){
+    System.out.println("Insira o valor da ajuda de custo: ");
+    ajudaDeCusto = entrada.nextDouble();
+  }
+  public administrador(String nome, String endereco, String telefone, int codigoSetor, double salariobase, double imposto, double ajudaDeCusto){
+    super(nome, endereco, telefone, codigoSetor, salariobase, imposto);
+    this.ajudaDeCusto = ajudaDeCusto;
+    
+  }
+  //metodo get para cada atributo;
+  public double getAjudaDeCusto(){
+    return ajudaDeCusto;
+  }
+  //metodo set para cada atributo;
+  public void setAjudaDeCusto(double ajudaDeCusto){
+    this.ajudaDeCusto = ajudaDeCusto;
+  }
+
+  //metodo para recalcular o salário;
+  public double calcularSalario(){
+    return salarioBase - imposto + ajudaDeCusto;
+  }
+}
