@@ -1,0 +1,43 @@
+import java.util.Scanner;
+public class Main{
+  public static void main(String[] args){
+    //crie codigos para testar as classess criadas;
+    Scanner entrada = new Scanner(System.in);
+    System.out.println("Insira o nome do cliente: ");
+    String nome = entrada.nextLine();
+    System.out.println("Insira o endereço do cliente: ");
+    String endereco = entrada.nextLine();
+    System.out.println("Insira o telefone do cliente: ");
+    String telefone = entrada.nextLine();
+    System.out.println("Insira o valor do crédito: ");
+    double valorCredito = entrada.nextDouble();
+    System.out.println("Insira o valor da dívida: ");
+    double valorDivida = entrada.nextDouble();
+    System.out.println("Insira o código do setor: ");
+    int codigoSetor = entrada.nextInt();
+    System.out.println("Insira o salário base: ");
+    double salarioBase = entrada.nextDouble();
+    System.out.println("Insira o imposto: ");
+    double imposto = entrada.nextDouble();
+    System.out.println("Insira o valor da ajuda de custo: ");
+    double ajudaDeCusto = entrada.nextDouble();
+    System.out.println("Insira o valor da produção: ");
+    double valorProducao = entrada.nextDouble();
+    System.out.println("Insira o valor da comissão: ");
+    double comissao = entrada.nextDouble();
+    System.out.println("Insira o valor das vendas: ");
+    double valorVendas = entrada.nextDouble();
+    System.out.println("Insira o valor da comissão: ");
+    double comissao2 = entrada.nextDouble();
+    //calcule os salarios;
+    empregado empregado = new empregado(nome, endereco, telefone, codigoSetor, salarioBase, imposto);
+    vendedor vendedor = new vendedor(nome, endereco, telefone, codigoSetor, salarioBase, imposto, valorVendas, comissao2);
+    operarios operarios = new operarios(nome, endereco, telefone, codigoSetor, salarioBase, imposto, valorProducao, comissao);
+    administrador administrador = new administrador(nome, endereco, telefone, codigoSetor, salarioBase, imposto, ajudaDeCusto);
+    System.out.println("Salário do empregado: " + empregado.calcularSalario());
+    System.out.println("Salário do vendedor: " + vendedor.calcularSalario());
+    System.out.println("Salário do operário: " + operarios.calcularSalario());
+    System.out.println("Salário do administrador: " + administrador.calcularSalario());
+    
+  }
+}
