@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class fornecedores extends pessoas{
+  Double valordecredito;
+  Double valordadivida; 
+public fornecedores(){
+  System.out.println("Insira o valor do crédito: ");
+  valordecredito = entrada.nextDouble();
+  System.out.println("Insira o valor da dívida: ");
+  valordadivida = entrada.nextDouble();
+  
+}
+public fornecedores(String nome, String endereco, String telefone, double valorCredito, double valorDivida) {
+    super(nome, endereco, telefone);
+    this.valordecredito = valorCredito;
+    this.valordadivida = valorDivida;
+}
+  public static void main(String [] args) {
+    fornecedores fornecedor = new fornecedores("Fornecedor1", "Rua Fornecedor", "123456789", 5000, 2000);
+  }
+//Metódos gets para cada atributo;
+public Double getValordecredito(){
+  return valordecredito;
+}
+public Double getValordadivida(){
+  return valordadivida;
+}
+//Metódos sets para cada atributo;
+public void setValordecredito(Double valordecredito){
+  this.valordecredito = valordecredito;
+}
+public void setValordadivida(Double valordadivida){
+  this.valordadivida = valordadivida;
+}
+
+//Metodo para obter o saldo que devolve a diferença entre os valores dos atributos valorCredito e valorDivida.;
+public double obterSaldo(){
+  return valordecredito - valordadivida;
+}
+
+}
