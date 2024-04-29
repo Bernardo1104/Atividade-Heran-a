@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+
+  public class pessoas {
+  String nome;
+  String endereço;
+  String telefone;
+  Scanner entrada = new Scanner(System.in);
+
+    //Metódos contrutores;
+    public pessoas(){
+      System.out.println("Insira o nome do cliente: ");
+      nome = entrada.nextLine();
+      System.out.println("Insira o endereço do cliente: ");
+    }
+    public pessoas(String nome, String endereço, String telefone){
+      this.nome = nome;
+      this.endereço = endereço;
+      this.telefone = telefone;
+    }
+    //Metódos gets para cada atributo;
+    public String getNome(){
+      return nome;
+    }
+    public String getEndereço(){
+      return endereço;
+    }
+    public String getTelefone(){
+      return telefone;
+    }
+    //Metódos sets para cada atributo;
+    public void setNome(String nome){
+      this.nome = nome;
+    }
+    public void setEndereço(String endereço){
+      this.endereço = endereço;
+    }
+    public void setTelefone(String telefone){
+      this.telefone = telefone;
+    }
+  }
