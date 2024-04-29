@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class empregado extends pessoas {
+  private int codigoSetor;
+  protected double salarioBase;
+  protected double imposto;
+  //metodo construtor;
+  public empregado(){
+    System.out.println("Insira o código do setor: ");
+    codigoSetor = entrada.nextInt();
+    System.out.println("Insira o salário base: ");
+    salarioBase = entrada.nextDouble();
+    System.out.println("Insira o imposto: ");
+    imposto = entrada.nextDouble();
+  }
+  public empregado(String nome, String endereco, String telefone, int codigoSetor, double salarioBase, double imposto){
+    super(nome, endereco, telefone);
+    this.codigoSetor = codigoSetor;
+    this.salarioBase = salarioBase;
+    this.imposto = imposto;
+  }
+
+//Metódo get para cada atributo;
+public int getCodigoSetor(){
+  return codigoSetor;
+}
+public double getSalarioBase(){
+  return salarioBase;
+}
+public double getImposto(){
+  return imposto;
+}
+//Metódos sets para cada atributo;
+public void setCodigoSetor(int codigoSetor){
+  this.codigoSetor = codigoSetor;
+}
+public void setSalarioBase(double salarioBase){
+  this.salarioBase = salarioBase;
+}
+public void setImposto(double imposto){
+  this.imposto = imposto;
+}
+//Metodo para cacular o salario;
+public double calcularSalario(){
+  return salarioBase - imposto;
+}
+
+}
