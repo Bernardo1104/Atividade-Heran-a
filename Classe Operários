@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class operarios extends empregado{
+  double valorProducao;
+  double comissao;
+  Scanner entrada = new Scanner(System.in);
+  //Metódos contrutores;
+  public operarios(){
+    System.out.println("Insira o valor da produção: ");
+    valorProducao = entrada.nextDouble();
+    System.out.println("Insira o valor da comissão: ");
+    comissao = entrada.nextDouble();
+  }
+  public operarios(String nome, String endereco, String telefone, int codigoSetor, double salarioBase, double imposto, double valorProducao, double comissao){
+    super(nome, endereco, telefone, codigoSetor, salarioBase, imposto);
+    this.valorProducao = valorProducao;
+    this.comissao = comissao;
+  }
+  //Metódos gets para cada atributo;
+  public double getValorProducao(){
+    return valorProducao;
+  }
+  public double getComissao(){
+    return comissao;
+  }
+  //Metódos sets para cada atributo;
+  public void setValorProducao(double valorProducao){
+    this.valorProducao = valorProducao;
+  }
+  public void setComissao(double comissao){
+    this.comissao = comissao;
+  }
+  //Metodo para calcular o salario;
+  public double calcularSalario(){
+    return salarioBase + (comissao * valorProducao);
+  }
+}
