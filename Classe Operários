@@ -32,6 +32,7 @@ public class operarios extends empregado{
   }
   //Metodo para calcular o salario;
   public double calcularSalario(){
-    return salarioBase + (comissao * valorProducao);
+    super.calcularSalario();
+    return salarioBase + (comissao * valorProducao / 100);
   }
 }
